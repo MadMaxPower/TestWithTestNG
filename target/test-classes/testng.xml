@@ -1,12 +1,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Suite1" verbose="1" >
-    <test name="test1" >
+    <test name="TestPen">
         <classes>
-            <class name="com.test.classes.TestPen"/>
+            <class name="com.test.classes.TestPen">
+                <methods>
+                    <include name="testPenGetColor_ShouldPrintRedColor"/>
+                    <include name="testPenGetColor_ShouldNotPrintColor"/>
+                    <include name="testPenIsWork_ShouldNotWorking"/>
+                    <include name="testPenIsWork_ShouldWorking"/>
+                    <include name="testPenWrite_InkMoreThanSizeWordAndLetter0"/>
+                    <include name="testPenWrite_InkMoreThanSizeWordAndLetter1"/>
+                    <include name="testPenWrite_InkLessThanSizeWordAndLetter1"/>
+                    <include name="testPenWrite_InkLessThanSizeWordAndLetter0"/>
+                    <include name="testPenWrite_InkEqualSizeWordAndLetter0"/>
+                    <include name="testPenWrite_InkEqualSizeWordAndLetter1"/>
+                </methods>
+            </class>
         </classes>
-    </test>
-
-    <test name="test2">
     </test>
 </suite>

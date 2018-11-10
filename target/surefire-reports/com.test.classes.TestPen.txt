@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: com.test.classes.TestPen
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 1.571 s <<< FAILURE! - in com.test.classes.TestPen
+testPenGetColor_ShouldNotPrintColor(com.test.classes.TestPen)  Time elapsed: 0.064 s  <<< FAILURE!
+java.lang.AssertionError: expected [] but found [BLUE]
+	at com.test.classes.TestPen.testPenGetColor_ShouldNotPrintColor(TestPen.java:97)
+
+testPenGetColor_ShouldPrintRedColor(com.test.classes.TestPen)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected [RED] but found [BLUE]
+	at com.test.classes.TestPen.testPenGetColor_ShouldPrintRedColor(TestPen.java:73)
+
+testPenWrite_InkEqualSizeWordAndLetter0(com.test.classes.TestPen)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: expected [] but found [test]
+	at com.test.classes.TestPen.testPenWrite_InkEqualSizeWordAndLetter0(TestPen.java:146)
+
+testPenWrite_InkLessThanSizeWordAndLetter0(com.test.classes.TestPen)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: expected [] but found [testing]
+	at com.test.classes.TestPen.testPenWrite_InkLessThanSizeWordAndLetter0(TestPen.java:139)
+
+testPenWrite_InkMoreThanSizeWordAndLetter0(com.test.classes.TestPen)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected [] but found [test]
+	at com.test.classes.TestPen.testPenWrite_InkMoreThanSizeWordAndLetter0(TestPen.java:118)
+
