@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.956 s <<< FAILURE! - in TestSuite
+testIsTheColorOfPenIsRight(com.test.classes.TestPen)  Time elapsed: 0.013 s  <<< FAILURE!
+java.lang.AssertionError: expected [BLUE] but found [Red]
+	at com.test.classes.TestPen.testIsTheColorOfPenIsRight(TestPen.java:13)
+
