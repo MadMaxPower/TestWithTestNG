@@ -5,12 +5,11 @@
     <classes>
       <class name="com.test.classes.TestPen">
         <methods>
-          <include name="testPenWrite_InkEqualSizeWordAndLetter0"/>
+          <include name="testPenIsWork_IsPenWorkIfContEmpty" invocation-numbers="0 1"/>
+          <include name="testPenGetColor_ShouldPrintRightColor"/>
           <include name="testPenGetColor_ShouldNotPrintColor"/>
-          <include name="testPenGetColor_ShouldPrintRedColor"/>
-          <include name="testPenWrite_InkLessThanSizeWordAndLetter0"/>
-          <include name="testPenWrite_InkMoreThanSizeWordAndLetter0"/>
           <include name="tearDown"/>
+          <include name="testPenWrite_ShouldWriteAnything" invocation-numbers="0"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.test.classes.TestPen -->

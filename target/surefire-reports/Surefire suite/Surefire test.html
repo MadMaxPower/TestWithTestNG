@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Surefire test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>5/5/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>9/5/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Nov 11 01:11:26 MSK 2018</td>
+<td>Started on:</td><td>Mon Nov 12 00:58:08 MSK 2018</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (120 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (579 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,17 +76,17 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.test.classes.TestPen.testPenGetColor_ShouldNotPrintColor()'><b>testPenGetColor_ShouldNotPrintColor</b><br>Test class: com.test.classes.TestPen</td>
-<td><div><pre>java.lang.AssertionError: expected [] but found [BLUE]
-	at com.test.classes.TestPen.testPenGetColor_ShouldNotPrintColor(TestPen.java:97)
-... Removed 36 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace131206411", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace131206411'><pre>java.lang.AssertionError: expected [] but found [BLUE]
+<td><div><pre>java.lang.AssertionError: expected [BLUE] but found []
+	at com.test.classes.TestPen.testPenGetColor_ShouldNotPrintColor(TestPen.java:84)
+... Removed 36 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2054757222", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2054757222'><pre>java.lang.AssertionError: expected [BLUE] but found []
 	at org.testng.Assert.fail(Assert.java:96)
 	at org.testng.Assert.failNotEquals(Assert.java:776)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
 	at org.testng.Assert.assertEquals(Assert.java:118)
 	at org.testng.Assert.assertEquals(Assert.java:453)
 	at org.testng.Assert.assertEquals(Assert.java:463)
-	at com.test.classes.TestPen.testPenGetColor_ShouldNotPrintColor(TestPen.java:97)
+	at com.test.classes.TestPen.testPenGetColor_ShouldNotPrintColor(TestPen.java:84)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -119,20 +119,20 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
 </pre></div></td>
 <td>0</td>
-<td>com.test.classes.TestPen@35cabb2a</td></tr>
+<td>com.test.classes.TestPen@223d2c72</td></tr>
 <tr>
-<td title='com.test.classes.TestPen.testPenGetColor_ShouldPrintRedColor()'><b>testPenGetColor_ShouldPrintRedColor</b><br>Test class: com.test.classes.TestPen</td>
-<td><div><pre>java.lang.AssertionError: expected [RED] but found [BLUE]
-	at com.test.classes.TestPen.testPenGetColor_ShouldPrintRedColor(TestPen.java:73)
-... Removed 36 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1816147548", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1816147548'><pre>java.lang.AssertionError: expected [RED] but found [BLUE]
+<td title='com.test.classes.TestPen.testPenGetColor_ShouldPrintRightColor()'><b>testPenGetColor_ShouldPrintRightColor</b><br>Test class: com.test.classes.TestPen</td>
+<td><div><pre>java.lang.AssertionError: expected [BLUE] but found [RED]
+	at com.test.classes.TestPen.testPenGetColor_ShouldPrintRightColor(TestPen.java:77)
+... Removed 36 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1865201235", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1865201235'><pre>java.lang.AssertionError: expected [BLUE] but found [RED]
 	at org.testng.Assert.fail(Assert.java:96)
 	at org.testng.Assert.failNotEquals(Assert.java:776)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
 	at org.testng.Assert.assertEquals(Assert.java:118)
 	at org.testng.Assert.assertEquals(Assert.java:453)
 	at org.testng.Assert.assertEquals(Assert.java:463)
-	at com.test.classes.TestPen.testPenGetColor_ShouldPrintRedColor(TestPen.java:73)
+	at com.test.classes.TestPen.testPenGetColor_ShouldPrintRightColor(TestPen.java:77)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -165,20 +165,18 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
 </pre></div></td>
 <td>0</td>
-<td>com.test.classes.TestPen@35cabb2a</td></tr>
+<td>com.test.classes.TestPen@223d2c72</td></tr>
 <tr>
-<td title='com.test.classes.TestPen.testPenWrite_InkEqualSizeWordAndLetter0()'><b>testPenWrite_InkEqualSizeWordAndLetter0</b><br>Test class: com.test.classes.TestPen</td>
-<td><div><pre>java.lang.AssertionError: expected [] but found [test]
-	at com.test.classes.TestPen.testPenWrite_InkEqualSizeWordAndLetter0(TestPen.java:146)
-... Removed 36 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace130668770", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace130668770'><pre>java.lang.AssertionError: expected [] but found [test]
+<td title='com.test.classes.TestPen.testPenIsWork_IsPenWorkIfContEmpty()'><b>testPenIsWork_IsPenWorkIfContEmpty</b><br>Test class: com.test.classes.TestPen<br>Parameters: -1, true</td>
+<td><div><pre>java.lang.AssertionError: expected [false] but found [true]
+	at com.test.classes.TestPen.testPenIsWork_IsPenWorkIfContEmpty(TestPen.java:54)
+... Removed 34 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1244867001", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1244867001'><pre>java.lang.AssertionError: expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:96)
 	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:453)
-	at org.testng.Assert.assertEquals(Assert.java:463)
-	at com.test.classes.TestPen.testPenWrite_InkEqualSizeWordAndLetter0(TestPen.java:146)
+	at org.testng.Assert.assertFalse(Assert.java:65)
+	at org.testng.Assert.assertFalse(Assert.java:75)
+	at com.test.classes.TestPen.testPenIsWork_IsPenWorkIfContEmpty(TestPen.java:54)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -211,20 +209,18 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
 </pre></div></td>
 <td>0</td>
-<td>com.test.classes.TestPen@35cabb2a</td></tr>
+<td>com.test.classes.TestPen@223d2c72</td></tr>
 <tr>
-<td title='com.test.classes.TestPen.testPenWrite_InkLessThanSizeWordAndLetter0()'><b>testPenWrite_InkLessThanSizeWordAndLetter0</b><br>Test class: com.test.classes.TestPen</td>
-<td><div><pre>java.lang.AssertionError: expected [] but found [testing]
-	at com.test.classes.TestPen.testPenWrite_InkLessThanSizeWordAndLetter0(TestPen.java:139)
-... Removed 36 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace182531396", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace182531396'><pre>java.lang.AssertionError: expected [] but found [testing]
+<td title='com.test.classes.TestPen.testPenIsWork_IsPenWorkIfContEmpty()'><b>testPenIsWork_IsPenWorkIfContEmpty</b><br>Test class: com.test.classes.TestPen<br>Parameters: 0, true</td>
+<td><div><pre>java.lang.AssertionError: expected [false] but found [true]
+	at com.test.classes.TestPen.testPenIsWork_IsPenWorkIfContEmpty(TestPen.java:54)
+... Removed 34 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1037955032", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1037955032'><pre>java.lang.AssertionError: expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:96)
 	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:453)
-	at org.testng.Assert.assertEquals(Assert.java:463)
-	at com.test.classes.TestPen.testPenWrite_InkLessThanSizeWordAndLetter0(TestPen.java:139)
+	at org.testng.Assert.assertFalse(Assert.java:65)
+	at org.testng.Assert.assertFalse(Assert.java:75)
+	at com.test.classes.TestPen.testPenIsWork_IsPenWorkIfContEmpty(TestPen.java:54)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -257,20 +253,20 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
 </pre></div></td>
 <td>0</td>
-<td>com.test.classes.TestPen@35cabb2a</td></tr>
+<td>com.test.classes.TestPen@223d2c72</td></tr>
 <tr>
-<td title='com.test.classes.TestPen.testPenWrite_InkMoreThanSizeWordAndLetter0()'><b>testPenWrite_InkMoreThanSizeWordAndLetter0</b><br>Test class: com.test.classes.TestPen</td>
-<td><div><pre>java.lang.AssertionError: expected [] but found [test]
-	at com.test.classes.TestPen.testPenWrite_InkMoreThanSizeWordAndLetter0(TestPen.java:118)
-... Removed 36 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace587003819", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace587003819'><pre>java.lang.AssertionError: expected [] but found [test]
+<td title='com.test.classes.TestPen.testPenWrite_ShouldWriteAnything()'><b>testPenWrite_ShouldWriteAnything</b><br>Test class: com.test.classes.TestPen<br>Parameters: 0, 4, qwertyu, </td>
+<td><div><pre>java.lang.AssertionError: expected [] but found [qwertyu]
+	at com.test.classes.TestPen.testPenWrite_ShouldWriteAnything(TestPen.java:103)
+... Removed 36 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace369805307", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace369805307'><pre>java.lang.AssertionError: expected [] but found [qwertyu]
 	at org.testng.Assert.fail(Assert.java:96)
 	at org.testng.Assert.failNotEquals(Assert.java:776)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
 	at org.testng.Assert.assertEquals(Assert.java:118)
 	at org.testng.Assert.assertEquals(Assert.java:453)
 	at org.testng.Assert.assertEquals(Assert.java:463)
-	at com.test.classes.TestPen.testPenWrite_InkMoreThanSizeWordAndLetter0(TestPen.java:118)
+	at com.test.classes.TestPen.testPenWrite_ShouldWriteAnything(TestPen.java:103)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -303,7 +299,7 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
 </pre></div></td>
 <td>0</td>
-<td>com.test.classes.TestPen@35cabb2a</td></tr>
+<td>com.test.classes.TestPen@223d2c72</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -313,30 +309,50 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.test.classes.TestPen.testPenIsWork_ShouldNotWorking()'><b>testPenIsWork_ShouldNotWorking</b><br>Test class: com.test.classes.TestPen</td>
+<td title='com.test.classes.TestPen.testPenDoSomethingElse_ShouldDoSomethingElse()'><b>testPenDoSomethingElse_ShouldDoSomethingElse</b><br>Test class: com.test.classes.TestPen</td>
 <td></td>
 <td>0</td>
-<td>com.test.classes.TestPen@35cabb2a</td></tr>
+<td>com.test.classes.TestPen@223d2c72</td></tr>
 <tr>
-<td title='com.test.classes.TestPen.testPenIsWork_ShouldWorking()'><b>testPenIsWork_ShouldWorking</b><br>Test class: com.test.classes.TestPen</td>
+<td title='com.test.classes.TestPen.testPenIsWork_IsPenWork()'><b>testPenIsWork_IsPenWork</b><br>Test class: com.test.classes.TestPen<br>Parameters: 1000, true</td>
 <td></td>
 <td>0</td>
-<td>com.test.classes.TestPen@35cabb2a</td></tr>
+<td>com.test.classes.TestPen@223d2c72</td></tr>
 <tr>
-<td title='com.test.classes.TestPen.testPenWrite_InkEqualSizeWordAndLetter1()'><b>testPenWrite_InkEqualSizeWordAndLetter1</b><br>Test class: com.test.classes.TestPen</td>
+<td title='com.test.classes.TestPen.testPenWrite_ShouldWriteAnything()'><b>testPenWrite_ShouldWriteAnything</b><br>Test class: com.test.classes.TestPen<br>Parameters: -1, 0, testString, </td>
 <td></td>
 <td>0</td>
-<td>com.test.classes.TestPen@35cabb2a</td></tr>
+<td>com.test.classes.TestPen@223d2c72</td></tr>
 <tr>
-<td title='com.test.classes.TestPen.testPenWrite_InkLessThanSizeWordAndLetter1()'><b>testPenWrite_InkLessThanSizeWordAndLetter1</b><br>Test class: com.test.classes.TestPen</td>
+<td title='com.test.classes.TestPen.testPenWrite_ShouldWriteAnything()'><b>testPenWrite_ShouldWriteAnything</b><br>Test class: com.test.classes.TestPen<br>Parameters: 1, -4, qwer, </td>
 <td></td>
 <td>0</td>
-<td>com.test.classes.TestPen@35cabb2a</td></tr>
+<td>com.test.classes.TestPen@223d2c72</td></tr>
 <tr>
-<td title='com.test.classes.TestPen.testPenWrite_InkMoreThanSizeWordAndLetter1()'><b>testPenWrite_InkMoreThanSizeWordAndLetter1</b><br>Test class: com.test.classes.TestPen</td>
+<td title='com.test.classes.TestPen.testPenWrite_ShouldWriteAnything()'><b>testPenWrite_ShouldWriteAnything</b><br>Test class: com.test.classes.TestPen<br>Parameters: 0, 0, qweqwe, </td>
 <td></td>
 <td>0</td>
-<td>com.test.classes.TestPen@35cabb2a</td></tr>
+<td>com.test.classes.TestPen@223d2c72</td></tr>
+<tr>
+<td title='com.test.classes.TestPen.testPenWrite_ShouldWriteAnything()'><b>testPenWrite_ShouldWriteAnything</b><br>Test class: com.test.classes.TestPen<br>Parameters: 1.5, 4, qwqw, qwqw</td>
+<td></td>
+<td>0</td>
+<td>com.test.classes.TestPen@223d2c72</td></tr>
+<tr>
+<td title='com.test.classes.TestPen.testPen_constructorWithOneParametr()'><b>testPen_constructorWithOneParametr</b><br>Test class: com.test.classes.TestPen<br>Parameters: 100</td>
+<td></td>
+<td>0</td>
+<td>com.test.classes.TestPen@223d2c72</td></tr>
+<tr>
+<td title='com.test.classes.TestPen.testPen_constructorWithThreeParametr()'><b>testPen_constructorWithThreeParametr</b><br>Test class: com.test.classes.TestPen<br>Parameters: 100, 1.0, RED</td>
+<td></td>
+<td>0</td>
+<td>com.test.classes.TestPen@223d2c72</td></tr>
+<tr>
+<td title='com.test.classes.TestPen.testPen_constructorWithTwoParametr()'><b>testPen_constructorWithTwoParametr</b><br>Test class: com.test.classes.TestPen<br>Parameters: 100, 1.0</td>
+<td></td>
+<td>0</td>
+<td>com.test.classes.TestPen@223d2c72</td></tr>
 </table><p>
 </body>
 </html>

@@ -1,24 +1,24 @@
 -------------------------------------------------------------------------------
 Test set: com.test.classes.TestPen
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 1.571 s <<< FAILURE! - in com.test.classes.TestPen
-testPenGetColor_ShouldNotPrintColor(com.test.classes.TestPen)  Time elapsed: 0.064 s  <<< FAILURE!
-java.lang.AssertionError: expected [] but found [BLUE]
-	at com.test.classes.TestPen.testPenGetColor_ShouldNotPrintColor(TestPen.java:97)
+Tests run: 14, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 22.398 s <<< FAILURE! - in com.test.classes.TestPen
+testPenGetColor_ShouldNotPrintColor(com.test.classes.TestPen)  Time elapsed: 0.009 s  <<< FAILURE!
+java.lang.AssertionError: expected [BLUE] but found []
+	at com.test.classes.TestPen.testPenGetColor_ShouldNotPrintColor(TestPen.java:84)
 
-testPenGetColor_ShouldPrintRedColor(com.test.classes.TestPen)  Time elapsed: 0.001 s  <<< FAILURE!
-java.lang.AssertionError: expected [RED] but found [BLUE]
-	at com.test.classes.TestPen.testPenGetColor_ShouldPrintRedColor(TestPen.java:73)
+testPenGetColor_ShouldPrintRightColor(com.test.classes.TestPen)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: expected [BLUE] but found [RED]
+	at com.test.classes.TestPen.testPenGetColor_ShouldPrintRightColor(TestPen.java:77)
 
-testPenWrite_InkEqualSizeWordAndLetter0(com.test.classes.TestPen)  Time elapsed: 0 s  <<< FAILURE!
-java.lang.AssertionError: expected [] but found [test]
-	at com.test.classes.TestPen.testPenWrite_InkEqualSizeWordAndLetter0(TestPen.java:146)
+testPenIsWork_IsPenWorkIfContEmpty(com.test.classes.TestPen)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected [false] but found [true]
+	at com.test.classes.TestPen.testPenIsWork_IsPenWorkIfContEmpty(TestPen.java:54)
 
-testPenWrite_InkLessThanSizeWordAndLetter0(com.test.classes.TestPen)  Time elapsed: 0 s  <<< FAILURE!
-java.lang.AssertionError: expected [] but found [testing]
-	at com.test.classes.TestPen.testPenWrite_InkLessThanSizeWordAndLetter0(TestPen.java:139)
+testPenIsWork_IsPenWorkIfContEmpty(com.test.classes.TestPen)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: expected [false] but found [true]
+	at com.test.classes.TestPen.testPenIsWork_IsPenWorkIfContEmpty(TestPen.java:54)
 
-testPenWrite_InkMoreThanSizeWordAndLetter0(com.test.classes.TestPen)  Time elapsed: 0.001 s  <<< FAILURE!
-java.lang.AssertionError: expected [] but found [test]
-	at com.test.classes.TestPen.testPenWrite_InkMoreThanSizeWordAndLetter0(TestPen.java:118)
+testPenWrite_ShouldWriteAnything(com.test.classes.TestPen)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected [] but found [qwertyu]
+	at com.test.classes.TestPen.testPenWrite_ShouldWriteAnything(TestPen.java:103)
 

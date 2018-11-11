@@ -2,21 +2,8 @@
 
 <suite name="Suite1" verbose="1" >
     <test name="TestPen">
-        <classes>
-            <class name="com.test.classes.TestPen">
-                <methods>
-                    <include name="testPenGetColor_ShouldPrintRedColor"/>
-                    <include name="testPenGetColor_ShouldNotPrintColor"/>
-                    <include name="testPenIsWork_ShouldNotWorking"/>
-                    <include name="testPenIsWork_ShouldWorking"/>
-                    <include name="testPenWrite_InkMoreThanSizeWordAndLetter0"/>
-                    <include name="testPenWrite_InkMoreThanSizeWordAndLetter1"/>
-                    <include name="testPenWrite_InkLessThanSizeWordAndLetter1"/>
-                    <include name="testPenWrite_InkLessThanSizeWordAndLetter0"/>
-                    <include name="testPenWrite_InkEqualSizeWordAndLetter0"/>
-                    <include name="testPenWrite_InkEqualSizeWordAndLetter1"/>
-                </methods>
-            </class>
-        </classes>
+        <packages>
+            <package name="com.test.classes.*"/>
+        </packages>
     </test>
 </suite>
