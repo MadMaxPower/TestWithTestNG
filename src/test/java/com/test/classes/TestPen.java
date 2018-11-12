@@ -10,10 +10,26 @@ import java.lang.reflect.Field;
 public class TestPen {
 
     private Pen pen;
+    private Field field;
+    private Field field1;
+    private Field field2;
+    private Integer value;
+    private Double value1;
+    private String value2;
 
     @BeforeSuite
     public void setUp()
     {
+        try {
+            field = Pen.class.getDeclaredField("inkContainerValue");
+            field1 = Pen.class.getDeclaredField("sizeLetter");
+            field2 = Pen.class.getDeclaredField("color");
+            field.setAccessible(true);
+            field1.setAccessible(true);
+            field2.setAccessible(true);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
         System.out.println("System is ready for testing");
     }
 
@@ -21,6 +37,9 @@ public class TestPen {
     public void tearDown()
     {
         System.out.println("System was tested");
+        field.setAccessible(false);
+        field1.setAccessible(false);
+        field2.setAccessible(false);
     }
 
     @DataProvider
@@ -83,7 +102,6 @@ public class TestPen {
                 {-1,0,"testString",""},
                 {1,-4,"qwer",""},
                 {0,0,"qweqwe",""},
-                {1.5,4,"qwqw","qwqw"},
         };
     }
 
@@ -103,12 +121,14 @@ public class TestPen {
     }
 
     @Test(dataProvider = "constructorWithOneParametrObject")
-    public void testPen_constructorWithOneParametr(Integer inkContainer) throws NoSuchFieldException, IllegalAccessException {
+    public void testPen_constructorWithOneParametr(Integer inkContainer) {
         Pen pen = new Pen(inkContainer);
-
-        Field field = Pen.class.getDeclaredField("inkContainerValue");
-        field.setAccessible(true);
-        Integer value = (Integer) field.get(pen);
+        try {
+            value = (Integer) field.get(pen);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
         Assert.assertEquals(value, inkContainer);
     }
 
@@ -121,12 +141,14 @@ public class TestPen {
     }
 
     @Test(dataProvider = "constructorWithTwoParametrObject1")
-    public void testPen_constructorWithTwoParametr1(Integer inkContainer, Double sizeLetter) throws NoSuchFieldException, IllegalAccessException {
+    public void testPen_constructorWithTwoParametr1(Integer inkContainer, Double sizeLetter) {
         Pen pen = new Pen(inkContainer, sizeLetter);
-
-        Field field = Pen.class.getDeclaredField("inkContainerValue");
-        field.setAccessible(true);
-        Integer value = (Integer) field.get(pen);
+        try {
+            value = (Integer) field.get(pen);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
         Assert.assertEquals(value, inkContainer);
     }
 
@@ -139,12 +161,15 @@ public class TestPen {
     }
 
     @Test(dataProvider = "constructorWithTwoParametrObject2")
-    public void testPen_constructorWithTwoParametr2(Integer inkContainer, Double sizeLetter) throws NoSuchFieldException, IllegalAccessException {
-        Pen pen = new Pen(inkContainer, sizeLetter);
+    public void testPen_constructorWithTwoParametr2(Integer inkContainer, Double sizeLetter) {
 
-        Field field1 = Pen.class.getDeclaredField("sizeLetter");
-        field1.setAccessible(true);
-        Double value1 = (Double) field1.get(pen);
+        Pen pen = new Pen(inkContainer, sizeLetter);
+        try {
+            value1 = (Double) field1.get(pen);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
         Assert.assertEquals(value1,sizeLetter);
     }
 
@@ -157,12 +182,15 @@ public class TestPen {
     }
 
     @Test(dataProvider = "constructorWithThreeParametrObject1")
-    public void testPen_constructorWithThreeParametr1(Integer inkContainer, Double sizeLetter, String color) throws NoSuchFieldException, IllegalAccessException {
-        Pen pen = new Pen(inkContainer, sizeLetter, color);
+    public void testPen_constructorWithThreeParametr1(Integer inkContainer, Double sizeLetter, String color) {
 
-        Field field = Pen.class.getDeclaredField("inkContainerValue");
-        field.setAccessible(true);
-        Integer value = (Integer) field.get(pen);
+        Pen pen = new Pen(inkContainer, sizeLetter, color);
+        try {
+            value = (Integer) field.get(pen);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
         Assert.assertNotNull(value);
     }
 
@@ -175,12 +203,15 @@ public class TestPen {
     }
 
     @Test(dataProvider = "constructorWithThreeParametrObject2")
-    public void testPen_constructorWithThreeParametr2(Integer inkContainer, Double sizeLetter, String color) throws NoSuchFieldException, IllegalAccessException {
-        Pen pen = new Pen(inkContainer, sizeLetter, color);
+    public void testPen_constructorWithThreeParametr2(Integer inkContainer, Double sizeLetter, String color) {
 
-        Field field1 = Pen.class.getDeclaredField("sizeLetter");
-        field1.setAccessible(true);
-        Double value1 = (Double) field1.get(pen);
+        Pen pen = new Pen(inkContainer, sizeLetter, color);
+        try {
+            value1 = (Double) field1.get(pen);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
         Assert.assertEquals(value1,sizeLetter);
     }
 
@@ -193,11 +224,15 @@ public class TestPen {
     }
 
     @Test(dataProvider = "constructorWithThreeParametrObject3")
-    public void testPen_constructorWithThreeParametr3(Integer inkContainer, Double sizeLetter, String color) throws NoSuchFieldException, IllegalAccessException {
+    public void testPen_constructorWithThreeParametr3(Integer inkContainer, Double sizeLetter, String color) {
+
         Pen pen = new Pen(inkContainer, sizeLetter, color);
-        Field field2 = Pen.class.getDeclaredField("color");
-        field2.setAccessible(true);
-        String value2 = (String) field2.get(pen);
+        try {
+            value2 = (String) field2.get(pen);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
         Assert.assertEquals(value2,color);
     }
 
