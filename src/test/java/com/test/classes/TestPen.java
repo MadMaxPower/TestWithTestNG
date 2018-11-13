@@ -3,8 +3,7 @@ package com.test.classes;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import static org.mockito.Mockito.*;
-
+import java.io.*;
 import java.lang.reflect.Field;
 
 public class TestPen {
@@ -28,7 +27,7 @@ public class TestPen {
             field1.setAccessible(true);
             field2.setAccessible(true);
         } catch (NoSuchFieldException e) {
-            e.printStackTrace();
+           e.printStackTrace();
         }
         System.out.println("System is ready for testing");
     }
@@ -40,68 +39,135 @@ public class TestPen {
         field.setAccessible(false);
         field1.setAccessible(false);
         field2.setAccessible(false);
+        File f1 = new File("output.txt");
+        File f2 = new File("output1.txt");
+        f1.delete();
+        f2.delete();
     }
 
     @DataProvider
     public Object [][] shouldWorkingIfContainerIsNotEmpty()
     {
         return new Object[][]{
-                {1000, pen.isWork()},
+                {1000},
         };
     }
 
     @Test(dataProvider = "shouldWorkingIfContainerIsNotEmpty")
-    public void testPenIsWork_IsPenWork(Integer inkContainer, Boolean res)
+    public void testPenIsWork_IsPenWork(Integer inkContainer)
     {
         pen = new Pen(inkContainer);
-        Assert.assertTrue(res);
+        Assert.assertTrue(pen.isWork());
     }
 
     @DataProvider
     public Object [][] shouldNotWorkingIfContainerIsEmpty()
     {
         return new Object[][]{
-                {-1,pen.isWork()},
-                {0, pen.isWork()},
+                {0},
+                {-100},
         };
     }
 
     @Test(dataProvider = "shouldNotWorkingIfContainerIsEmpty")
-    public void testPenIsWork_IsPenWorkIfContEmpty(int inkContainer, boolean res)
+    public void testPenIsWork_IsPenWorkIfContEmpty(Integer inkContainer)
     {
         pen = new Pen(inkContainer);
-        Assert.assertFalse(res);
+        Assert.assertFalse(pen.isWork());
     }
 
-    @Test
-    public void testPenDoSomethingElse_ShouldDoSomethingElse()
+    @DataProvider
+    public Object [][] shouldDoSomeElseObject()
     {
-        Pen pen = mock(Pen.class);
-        doNothing().when(pen).doSomethingElse();
+        return new Object[][]{
+                {100,2.0,"BLUE"},
+        };
     }
 
-    @Test
-    public void testPenGetColor_ShouldPrintRightColor()
+    @Test(dataProvider = "shouldDoSomeElseObject")
+    public void testPenDoSomethingElse_ShouldDoSomethingElse(Integer inkCont,Double sizeLet, String color)
     {
-        pen = new Pen(100,1.0,"RED");
-        Assert.assertEquals("RED", pen.getColor());
+        Pen pen = new Pen(inkCont,sizeLet,color);
+        FileOutputStream out = null;
+        String line="";
+        try {
+            out = new FileOutputStream("output.txt");
+            PrintStream ps = new PrintStream(out);
+            System.setOut(ps);
+            pen.doSomethingElse();
+            ps.close();
+            FileInputStream fstream = new FileInputStream("output.txt");
+            BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+            line = br.readLine();
+            br.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Assert.assertEquals(line, color);
     }
 
-    @Test
-    public void testPenGetColor_ShouldNotPrintColor()
+    @DataProvider
+    public Object [][] shouldDoSomeElseObject1()
     {
-        pen = new Pen(100,1.0,"");
-        Assert.assertEquals("", pen.getColor());
+        return new Object[][]{
+                {100, ""},
+        };
+    }
+
+    @Test(dataProvider = "shouldDoSomeElseObject1")
+    public void testPenDoSomethingElse_ShouldDoSomethingElse1(Integer inkCont,String expected)
+    {
+        Pen pen = new Pen(inkCont);
+        FileOutputStream out = null;
+        String line="";
+        try {
+            out = new FileOutputStream("output1.txt");
+            PrintStream ps = new PrintStream(out);
+            System.setOut(ps);
+            pen.doSomethingElse();
+            ps.close();
+            FileInputStream fstream = new FileInputStream("output1.txt");
+            BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+            line = br.readLine();
+            br.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Assert.assertEquals(line, expected);
+    }
+
+    @DataProvider
+    public Object [][] shouldWritePrintColorObject()
+    {
+        return new Object[][]{
+                {0,4.0,"ORANGE"},
+                {100,2.4,""},
+        };
+    }
+
+    @Test(dataProvider = "shouldWritePrintColorObject")
+    public void testPenGetColor_ShouldPrintRightColor(Integer inkCont, Double sizeLetter, String color)
+    {
+        pen = new Pen(inkCont,sizeLetter,color);
+        Assert.assertEquals(pen.getColor(), color);
     }
 
     @DataProvider
     public Object [][] shouldWriteAnythingObject()
     {
         return new Object[][]{
-                {0,4,"qwertyu",""},
-                {-1,0,"testString",""},
-                {1,-4,"qwer",""},
-                {0,0,"qweqwe",""},
+                {0,4,"qw",""},
+                {1.5,4,"qw","qw"},
+                {1.5,4,"qwqwqw","qwqw"},
+                {0,4,"qwqwqw",""},
+                {0,2,"qw",""},
+                {1,4,"qwqw","qwqw"},
+                {-1,-1,"qw",""},
+                {-1,10,"qw",""},
         };
     }
 
@@ -113,15 +179,15 @@ public class TestPen {
     }
 
     @DataProvider
-    public Object [][] constructorWithOneParametrObject()
+    public Object [][] constructorWithOneParameterObject()
     {
         return new Object[][]{
                 {100},
         };
     }
 
-    @Test(dataProvider = "constructorWithOneParametrObject")
-    public void testPen_constructorWithOneParametr(Integer inkContainer) {
+    @Test(dataProvider = "constructorWithOneParameterObject")
+    public void testPen_constructorWithOneParameter(Integer inkContainer) {
         Pen pen = new Pen(inkContainer);
         try {
             value = (Integer) field.get(pen);
@@ -133,15 +199,15 @@ public class TestPen {
     }
 
     @DataProvider
-    public Object [][] constructorWithTwoParametrObject1()
+    public Object [][] constructorWithTwoParameterObject1()
     {
         return new Object[][]{
                 {100, 1.0},
         };
     }
 
-    @Test(dataProvider = "constructorWithTwoParametrObject1")
-    public void testPen_constructorWithTwoParametr1(Integer inkContainer, Double sizeLetter) {
+    @Test(dataProvider = "constructorWithTwoParameterObject1")
+    public void testPen_constructorWithTwoParameter1(Integer inkContainer, Double sizeLetter) {
         Pen pen = new Pen(inkContainer, sizeLetter);
         try {
             value = (Integer) field.get(pen);
@@ -153,15 +219,15 @@ public class TestPen {
     }
 
     @DataProvider
-    public Object [][] constructorWithTwoParametrObject2()
+    public Object [][] constructorWithTwoParameterObject2()
     {
         return new Object[][]{
                 {100, 1.0},
         };
     }
 
-    @Test(dataProvider = "constructorWithTwoParametrObject2")
-    public void testPen_constructorWithTwoParametr2(Integer inkContainer, Double sizeLetter) {
+    @Test(dataProvider = "constructorWithTwoParameterObject2")
+    public void testPen_constructorWithTwoParameter2(Integer inkContainer, Double sizeLetter) {
 
         Pen pen = new Pen(inkContainer, sizeLetter);
         try {
@@ -174,15 +240,15 @@ public class TestPen {
     }
 
     @DataProvider
-    public Object [][] constructorWithThreeParametrObject1()
+    public Object [][] constructorWithThreeParameterObject1()
     {
         return new Object[][]{
                 {100,1.0,"RED"},
         };
     }
 
-    @Test(dataProvider = "constructorWithThreeParametrObject1")
-    public void testPen_constructorWithThreeParametr1(Integer inkContainer, Double sizeLetter, String color) {
+    @Test(dataProvider = "constructorWithThreeParameterObject1")
+    public void testPen_constructorWithThreeParameter1(Integer inkContainer, Double sizeLetter, String color) {
 
         Pen pen = new Pen(inkContainer, sizeLetter, color);
         try {
@@ -195,15 +261,15 @@ public class TestPen {
     }
 
     @DataProvider
-    public Object [][] constructorWithThreeParametrObject2()
+    public Object [][] constructorWithThreeParameterObject2()
     {
         return new Object[][]{
                 {100,1.0,"RED"},
         };
     }
 
-    @Test(dataProvider = "constructorWithThreeParametrObject2")
-    public void testPen_constructorWithThreeParametr2(Integer inkContainer, Double sizeLetter, String color) {
+    @Test(dataProvider = "constructorWithThreeParameterObject2")
+    public void testPen_constructorWithThreeParameter2(Integer inkContainer, Double sizeLetter, String color) {
 
         Pen pen = new Pen(inkContainer, sizeLetter, color);
         try {
@@ -216,15 +282,15 @@ public class TestPen {
     }
 
     @DataProvider
-    public Object [][] constructorWithThreeParametrObject3()
+    public Object [][] constructorWithThreeParameterObject3()
     {
         return new Object[][]{
                 {100,1.0,"RED"},
         };
     }
 
-    @Test(dataProvider = "constructorWithThreeParametrObject3")
-    public void testPen_constructorWithThreeParametr3(Integer inkContainer, Double sizeLetter, String color) {
+    @Test(dataProvider = "constructorWithThreeParameterObject3")
+    public void testPen_constructorWithThreeParameter3(Integer inkContainer, Double sizeLetter, String color) {
 
         Pen pen = new Pen(inkContainer, sizeLetter, color);
         try {
@@ -235,5 +301,4 @@ public class TestPen {
         }
         Assert.assertEquals(value2,color);
     }
-
 }

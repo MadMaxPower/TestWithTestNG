@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.test.classes.TestPen" time="22.398" tests="14" errors="0" skipped="0" failures="5">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.test.classes.TestPen" time="8.954" tests="20" errors="0" skipped="0" failures="6">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -19,7 +19,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Java\jdk-10.0.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\123\AppData\Local\Temp\surefire18080896708135542698\surefirebooter3472745722295796769.jar C:\Users\123\AppData\Local\Temp\surefire18080896708135542698 2018-11-12T00-58-07_561-jvmRun1 surefire2433303319152920124tmp surefire_01280723977321055884tmp"/>
+    <property name="sun.java.command" value="C:\Users\123\AppData\Local\Temp\surefire2353082229041785701\surefirebooter1162265685903022215.jar C:\Users\123\AppData\Local\Temp\surefire2353082229041785701 2018-11-13T13-22-25_734-jvmRun1 surefire6726455649896512091tmp surefire_018093929029221090434tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\IdeaProjects\testngmaven\target\test-classes;C:\IdeaProjects\testngmaven\target\classes;C:\Users\123\.m2\repository\org\testng\testng\6.14.3\testng-6.14.3.jar;C:\Users\123\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\123\.m2\repository\org\apache-extras\beanshell\bsh\2.0b6\bsh-2.0b6.jar;C:\Users\123\.m2\repository\org\mockito\mockito-core\2.23.0\mockito-core-2.23.0.jar;C:\Users\123\.m2\repository\net\bytebuddy\byte-buddy\1.9.0\byte-buddy-1.9.0.jar;C:\Users\123\.m2\repository\net\bytebuddy\byte-buddy-agent\1.9.0\byte-buddy-agent-1.9.0.jar;C:\Users\123\.m2\repository\org\objenesis\objenesis\2.6\objenesis-2.6.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -35,7 +35,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\123\AppData\Local\Temp\surefire18080896708135542698\surefirebooter3472745722295796769.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\123\AppData\Local\Temp\surefire2353082229041785701\surefirebooter1162265685903022215.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="10.0.1+10"/>
@@ -62,38 +62,48 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="54.0"/>
   </properties>
-  <testcase name="testPenDoSomethingElse_ShouldDoSomethingElse" classname="com.test.classes.TestPen" time="0.539"/>
-  <testcase name="testPenGetColor_ShouldNotPrintColor" classname="com.test.classes.TestPen" time="0.009">
-    <failure message="expected [BLUE] but found []" type="java.lang.AssertionError">java.lang.AssertionError: expected [BLUE] but found []
-	at com.test.classes.TestPen.testPenGetColor_ShouldNotPrintColor(TestPen.java:84)
+  <testcase name="testPenDoSomethingElse_ShouldDoSomethingElse" classname="com.test.classes.TestPen" time="0.009"/>
+  <testcase name="testPenDoSomethingElse_ShouldDoSomethingElse1" classname="com.test.classes.TestPen" time="0.008">
+    <failure message="expected [] but found [BLUE]" type="java.lang.AssertionError">java.lang.AssertionError: expected [] but found [BLUE]
+	at com.test.classes.TestPen.testPenDoSomethingElse_ShouldDoSomethingElse1(TestPen.java:140)
 </failure>
   </testcase>
   <testcase name="testPenGetColor_ShouldPrintRightColor" classname="com.test.classes.TestPen" time="0">
-    <failure message="expected [BLUE] but found [RED]" type="java.lang.AssertionError">java.lang.AssertionError: expected [BLUE] but found [RED]
-	at com.test.classes.TestPen.testPenGetColor_ShouldPrintRightColor(TestPen.java:77)
+    <failure message="expected [ORANGE] but found [BLUE]" type="java.lang.AssertionError">java.lang.AssertionError: expected [ORANGE] but found [BLUE]
+	at com.test.classes.TestPen.testPenGetColor_ShouldPrintRightColor(TestPen.java:156)
+</failure>
+  </testcase>
+  <testcase name="testPenGetColor_ShouldPrintRightColor" classname="com.test.classes.TestPen" time="0">
+    <failure message="expected [] but found [BLUE]" type="java.lang.AssertionError">java.lang.AssertionError: expected [] but found [BLUE]
+	at com.test.classes.TestPen.testPenGetColor_ShouldPrintRightColor(TestPen.java:156)
 </failure>
   </testcase>
   <testcase name="testPenIsWork_IsPenWork" classname="com.test.classes.TestPen" time="0"/>
-  <testcase name="testPenIsWork_IsPenWorkIfContEmpty" classname="com.test.classes.TestPen" time="0.001">
-    <failure message="expected [false] but found [true]" type="java.lang.AssertionError">java.lang.AssertionError: expected [false] but found [true]
-	at com.test.classes.TestPen.testPenIsWork_IsPenWorkIfContEmpty(TestPen.java:54)
+  <testcase name="testPenIsWork_IsPenWorkIfContEmpty" classname="com.test.classes.TestPen" time="0"/>
+  <testcase name="testPenIsWork_IsPenWorkIfContEmpty" classname="com.test.classes.TestPen" time="0"/>
+  <testcase name="testPenWrite_ShouldWriteAnything" classname="com.test.classes.TestPen" time="0">
+    <failure message="expected [] but found [qw]" type="java.lang.AssertionError">java.lang.AssertionError: expected [] but found [qw]
+	at com.test.classes.TestPen.testPenWrite_ShouldWriteAnything(TestPen.java:177)
 </failure>
   </testcase>
-  <testcase name="testPenIsWork_IsPenWorkIfContEmpty" classname="com.test.classes.TestPen" time="0">
-    <failure message="expected [false] but found [true]" type="java.lang.AssertionError">java.lang.AssertionError: expected [false] but found [true]
-	at com.test.classes.TestPen.testPenIsWork_IsPenWorkIfContEmpty(TestPen.java:54)
+  <testcase name="testPenWrite_ShouldWriteAnything" classname="com.test.classes.TestPen" time="0.001"/>
+  <testcase name="testPenWrite_ShouldWriteAnything" classname="com.test.classes.TestPen" time="0"/>
+  <testcase name="testPenWrite_ShouldWriteAnything" classname="com.test.classes.TestPen" time="0.001">
+    <failure message="expected [] but found [qwqwqw]" type="java.lang.AssertionError">java.lang.AssertionError: expected [] but found [qwqwqw]
+	at com.test.classes.TestPen.testPenWrite_ShouldWriteAnything(TestPen.java:177)
 </failure>
   </testcase>
   <testcase name="testPenWrite_ShouldWriteAnything" classname="com.test.classes.TestPen" time="0.001">
-    <failure message="expected [] but found [qwertyu]" type="java.lang.AssertionError">java.lang.AssertionError: expected [] but found [qwertyu]
-	at com.test.classes.TestPen.testPenWrite_ShouldWriteAnything(TestPen.java:103)
+    <failure message="expected [] but found [qw]" type="java.lang.AssertionError">java.lang.AssertionError: expected [] but found [qw]
+	at com.test.classes.TestPen.testPenWrite_ShouldWriteAnything(TestPen.java:177)
 </failure>
   </testcase>
   <testcase name="testPenWrite_ShouldWriteAnything" classname="com.test.classes.TestPen" time="0"/>
   <testcase name="testPenWrite_ShouldWriteAnything" classname="com.test.classes.TestPen" time="0"/>
-  <testcase name="testPenWrite_ShouldWriteAnything" classname="com.test.classes.TestPen" time="0.001"/>
-  <testcase name="testPenWrite_ShouldWriteAnything" classname="com.test.classes.TestPen" time="0"/>
-  <testcase name="testPen_constructorWithOneParametr" classname="com.test.classes.TestPen" time="0"/>
-  <testcase name="testPen_constructorWithThreeParametr" classname="com.test.classes.TestPen" time="0"/>
-  <testcase name="testPen_constructorWithTwoParametr" classname="com.test.classes.TestPen" time="0"/>
+  <testcase name="testPen_constructorWithOneParameter" classname="com.test.classes.TestPen" time="0.001"/>
+  <testcase name="testPen_constructorWithThreeParameter1" classname="com.test.classes.TestPen" time="0"/>
+  <testcase name="testPen_constructorWithThreeParameter2" classname="com.test.classes.TestPen" time="0"/>
+  <testcase name="testPen_constructorWithThreeParameter3" classname="com.test.classes.TestPen" time="0.001"/>
+  <testcase name="testPen_constructorWithTwoParameter1" classname="com.test.classes.TestPen" time="0"/>
+  <testcase name="testPen_constructorWithTwoParameter2" classname="com.test.classes.TestPen" time="0"/>
 </testsuite>
